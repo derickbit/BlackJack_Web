@@ -1,0 +1,803 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilização do menu */
+#menu {
+  background-color: #333; /* Cor de fundo do menu */
+  overflow: hidden;
+}
+
+#listaMenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* cor de fundo do menu */
+  position: fixed; /* Fixa o menu no topo da página */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px; /* Altura do menu */
+}
+
+#listaMenu li {
+  float: left; /* Remove o efeito padrão do li */
+}
+
+#listaMenu li a,
+#listaMenu li form input[type="submit"] {
+  display: block;
+  color: white; /* Cor do texto */
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  background-color: #333; /* Cor de fundo dos links e do botão */
+}
+
+#listaMenu li a:hover,
+#listaMenu li form input[type="submit"]:hover {
+  background-color: #111; /* Cor de fundo ao passar o mouse */
+}
+
+#listaMenu li form {
+  margin: 0;
+  padding: 0;
+}
+
+#listaMenu li:last-child {
+  margin-right: 0;
+  margin-left: auto; /* Empurra o último item (Sair) para a direita */
+}
+
+#listaMenu a {
+  text-decoration: none;
+  color: white; /* Cor do texto dos links */
+  padding: 10px 15px;
+  display: block;
+  transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+#listaMenu a:hover {
+  background-color: #555555; /* Cor ao passar o mouse */
+}
+
+#conteudoPrincipal {
+  margin-top: 60px; /* Espaçamento equivalente à altura do menu */
+}
+
+/* Estilo geral do corpo */
+body {
+  background-color: #f0f0f0; /* Cinza claro */
+  color: #333333; /* Cinza escuro */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+h1,
+h3 {
+  color: #444444; /* Cinza médio */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+a {
+  color: #555555; /* Cinza escuro */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #000000; /* Preto */
+}
+
+/* Estilos específicos para as páginas de login e cadastro */
+#main_login,
+#main_cadastro {
+  background-color: #ffffff; /* Branco */
+  padding: 40px;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+#titulo_login,
+#titulo_cadastro {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#section_login_form,
+#section_cadastro_form {
+  margin-top: 20px;
+}
+
+#form_login p,
+#form_cadastro p {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #cccccc; /* Cinza claro */
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #888888; /* Cinza médio */
+  outline: none;
+}
+
+button {
+  background-color: #888888; /* Cinza médio */
+  color: #ffffff; /* Branco */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #555555; /* Cinza escuro */
+}
+
+/* Estilo para o link de cadastro */
+#cadastro_prompt {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#link_cadastro {
+  color: #333333; /* Cinza escuro */
+  font-weight: bold;
+  border-bottom: 1px solid #333333;
+}
+
+#link_cadastro:hover {
+  color: #000000; /* Preto */
+  border-bottom-color: #000000;
+}
+
+/* Estilos específicos para a página de ranking */
+
+#body_ranking {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  margin: 0; /* Remove a margem padrão do body */
+  background-color: #f5f5f5; /* Adiciona uma cor de fundo opcional */
+}
+
+#body_denunciar_jogador {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  margin: 0; /* Remove a margem padrão do body */
+  background-color: #f5f5f5; /* Adiciona uma cor de fundo opcional */
+}
+
+#lista_ranking {
+  list-style-type: none; /* Remove os marcadores */
+  padding: 0; /* Remove o padding padrão */
+  margin: 0; /* Remove a margem padrão */
+  display: inline-block; /* Faz com que a lista se comporte como um bloco em linha */
+  align-content: center;
+}
+
+.item_ranking {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #c7c5c5; /* Cinza muito claro */
+  border-radius: 4px;
+  max-width: 600px;
+  font-size: 18px;
+  border-left: 4px solid #383838; /* Borda cinza médio à esquerda */
+}
+
+/* Cor para o primeiro lugar - dourado */
+.item_ranking:nth-child(1) {
+  background: linear-gradient(145deg, #ffec8b, #f0c911); /* Gradiente dourado */
+  border-left-color: #b8860b; /* Borda dourada escura */
+  font-weight: bold;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra mais forte para destaque */
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+/* Efeito de prata para o segundo lugar */
+.item_ranking:nth-child(2) {
+  background: linear-gradient(
+    145deg,
+    #d9d9d9,
+    #a8a8a8
+  ); /* Gradiente prateado */
+  border-left-color: #808080; /* Borda prata escura */
+  font-weight: bold;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra mais forte para destaque */
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+/* Efeito de bronze para o terceiro lugar */
+.item_ranking:nth-child(3) {
+  background: linear-gradient(145deg, #cd7f32, #8b5a2b); /* Gradiente bronze */
+  border-left-color: #8b5a2b; /* Borda bronze escura */
+  font-weight: bold;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra mais forte para destaque */
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+/* Cor para o restante dos itens - cinza padrão alternado */
+.item_ranking:nth-child(n + 4) {
+  background-color: #ebebeb; /* Cinza muito claro para itens a partir do quarto */
+  border-left-color: #383838; /* Borda cinza médio */
+}
+
+/* denuncias */
+/* Estilo geral para o corpo da página de denúncias */
+#body_denunciar_jogador {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  min-height: 100vh; /* Garante que o contêiner ocupe pelo menos a altura total da tela */
+  margin: 0;
+  background-color: #f5f5f5; /* Cor de fundo opcional */
+  font-family: Arial, sans-serif; /* Fonte padrão */
+}
+
+/* Estilo do título da página de denúncias */
+#titulo_denunciar_jogador {
+  margin: 20px 0; /* Espaço acima e abaixo do título */
+  font-size: 24px;
+  color: #333; /* Cor do texto do título */
+}
+
+/* Estilo principal do formulário */
+#main_denunciar_jogador {
+  width: 100%;
+  max-width: 800px; /* Largura máxima do contêiner do formulário */
+  background-color: #ffffff; /* Cor de fundo do formulário */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo da seção do formulário */
+#section_denunciar_jogador {
+  margin-bottom: 20px; /* Espaço abaixo da seção do formulário */
+}
+
+/* Estilo dos elementos do formulário */
+form p {
+  margin-bottom: 15px; /* Espaço entre os elementos do formulário */
+}
+
+/* Estilo dos rótulos dos campos do formulário */
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo dos campos de entrada do formulário */
+form select,
+form textarea,
+form input[type="file"],
+form button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Estilo do botão de registrar denúncia */
+#registrar_denuncia {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#registrar_denuncia:hover {
+  background-color: #45a049;
+}
+
+#section_minhas_denuncias {
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#titulo_minhas_denuncias {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+#tabela_denuncias {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabela_denuncias th,
+#tabela_denuncias td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+#tabela_denuncias th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+#tabela_denuncias tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#tabela_denuncias tr:hover {
+  background-color: #f1f1f1;
+}
+
+#nenhuma_denuncia {
+  text-align: center;
+  color: #888;
+}
+
+.form-excluir-denuncia,
+.btn-excluir {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  height: 100%;
+}
+
+#tabela_denuncias .btn-excluir:hover {
+  background-color: #555;
+}
+
+/* Rodapé (footer) */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #777777;
+  font-size: 14px;
+}
+
+/* Formulários */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#excluir {
+  background-color: none;
+}
+
+form p {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+form input[type="text"],
+form input[type="password"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+#btn_iniciar_partida {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#jogo_titulo {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#jogo_titulo img {
+  max-width: 30%;
+  height: auto;
+  display: inline-block;
+}
+
+/* alterar perfil */
+#body_editar_perfil {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#titulo_editar_perfil {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#main_editar_perfil {
+  max-width: 600px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#section_editar_perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#form_editar_perfil,
+#form_excluir_conta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#form_editar_perfil input[type="text"],
+#form_editar_perfil input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#form_editar_perfil input[type="submit"],
+#form_excluir_conta button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+#form_editar_perfil input[type="submit"]:hover,
+#form_excluir_conta button:hover {
+  background-color: #218838;
+}
+
+#form_excluir_conta button {
+  background-color: #343a40;
+}
+
+#form_excluir_conta button:hover {
+  background-color: #495057;
+}
+
+#form_editar_perfil label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+#form_editar_perfil p,
+#form_excluir_conta p {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* partidas */
+#body_simulador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+#titulo_simulador,
+#btn_iniciar_partida {
+  margin-bottom: 20px;
+}
+
+h1#titulo_simulador {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* botão de iniciar partida */
+button#btn_iniciar_partida {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+button#btn_iniciar_partida:hover {
+  background-color: #218838;
+}
+
+#resultado {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/*resultado da partida */
+div#resultado {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 60%;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#historico {
+  overflow-y: auto;
+  max-height: 70vh;
+  width: 100%;
+  max-width: 60%px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* histórico de partidas */
+div#historico {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 60%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+div.historico_partida {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+div.historico_partida p {
+  margin: 5px 0;
+  color: #555;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 10px 0;
+}
+
+/*login.php */
+#body_login {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#main_login {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+}
+
+#main_login img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+#titulo_login {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#form_login {
+  width: 100%;
+}
+
+#form_login input[type="text"],
+#form_login input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#form_login button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#form_login button[type="submit"]:hover {
+  background-color: #555;
+}
+
+#cadastro_prompt {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#cadastro_prompt a {
+  color: #333;
+  text-decoration: none;
+}
+
+#cadastro_prompt a:hover {
+  text-shadow: #333;
+}
+
+/*cadastrarPessoa.php */
+#body_cadastro {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#main_cadastro {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+}
+
+#main_cadastro img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+#titulo_cadastro {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#form_cadastro {
+  width: 100%;
+}
+
+#form_cadastro input[type="text"],
+#form_cadastro input[type="password"],
+#form_cadastro input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#form_cadastro button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#form_cadastro button[type="submit"]:hover {
+  background-color: #555;
+}
+
+#footer_cadastro {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#footer_cadastro a {
+  color: #333;
+  text-decoration: none;
+}
+
+#footer_cadastro a:hover {
+  text-decoration: underline;
+}
